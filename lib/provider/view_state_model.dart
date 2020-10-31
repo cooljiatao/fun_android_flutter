@@ -10,6 +10,9 @@ import 'view_state.dart';
 
 export 'view_state.dart';
 
+///
+/// ChangeNotifier封装的基类
+///
 class ViewStateModel with ChangeNotifier {
   /// 防止页面销毁后,异步任务才完成,导致报错
   bool _disposed = false;

@@ -17,10 +17,12 @@ import 'view_model/theme_model.dart';
 
 main() async {
   Provider.debugCheckInvalidValueType = null;
+  ///初始化原生代码前调用
   WidgetsFlutterBinding.ensureInitialized();
+  ///初始化存储相关代码
   await StorageManager.init();
   runApp(App());
-  // Android状态栏透明 splash为白色,所以调整状态栏文字为黑色
+  /// Android状态栏透明 splash为白色,所以调整状态栏文字为黑色
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarBrightness: Brightness.light));
@@ -38,8 +40,10 @@ class App extends StatelessWidget {
                 hideFooterWhenNotFull: true, //列表数据不满一页,不触发加载更多
                 child: MaterialApp(
                   debugShowCheckedModeBanner: false,
+                  ///设置主题
                   theme: themeModel.themeData(),
                   darkTheme: themeModel.themeData(platformDarkMode: true),
+                  ///设置本地化
                   locale: localeModel.locale,
                   localizationsDelegates: const [
                     S.delegate,
@@ -49,6 +53,7 @@ class App extends StatelessWidget {
                     GlobalWidgetsLocalizations.delegate
                   ],
                   supportedLocales: S.delegate.supportedLocales,
+                  ///设置路由
                   onGenerateRoute: Router.generateRoute,
                   initialRoute: RouteName.splash,
                 ),

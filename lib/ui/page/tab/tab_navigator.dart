@@ -33,6 +33,7 @@ class _TabNavigatorState extends State<TabNavigator> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: WillPopScope(
+        ///两次返回关闭
         onWillPop: () async {
           if (_lastPressed == null ||
               DateTime.now().difference(_lastPressed) > Duration(seconds: 1)) {
@@ -88,6 +89,7 @@ class _TabNavigatorState extends State<TabNavigator> {
 
   @override
   void initState() {
+    ///检测升级
     checkAppUpdate(context);
     super.initState();
   }

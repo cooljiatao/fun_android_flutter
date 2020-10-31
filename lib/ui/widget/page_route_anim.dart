@@ -1,4 +1,8 @@
 import 'package:flutter/cupertino.dart';
+///
+/// 当前文件各类用于管理页面切换效果
+/// 设置页面跳转动画等
+///
 
 class NoAnimRouteBuilder extends PageRouteBuilder {
   final Widget page;

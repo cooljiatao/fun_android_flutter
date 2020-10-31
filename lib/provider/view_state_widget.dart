@@ -2,8 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fun_android/config/resource_mananger.dart';
 import 'package:fun_android/generated/l10n.dart';
-
 import 'view_state.dart';
+
+///
+/// 定义了几种常用的布局
+///
+
 
 /// 加载中
 class ViewStateBusyWidget extends StatelessWidget {

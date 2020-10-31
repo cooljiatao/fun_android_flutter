@@ -13,12 +13,15 @@ List<SingleChildWidget> providers = [
 
 /// 独立的model
 List<SingleChildWidget> independentServices = [
+  ///应用主题
   ChangeNotifierProvider<ThemeModel>(
     create: (context) => ThemeModel(),
   ),
+  ///语言设置
   ChangeNotifierProvider<LocaleModel>(
     create: (context) => LocaleModel(),
   ),
+  ///用于喜爱
   ChangeNotifierProvider<GlobalFavouriteStateModel>(
     create: (context) => GlobalFavouriteStateModel(),
   )

@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+///图片管理类
 class ImageHelper {
   static const String baseUrl = 'http://www.meetingplus.cn';
   static const String imagePrefix = '$baseUrl/uimg/';
@@ -15,6 +16,9 @@ class ImageHelper {
     return imagePrefix + url;
   }
 
+  ///
+  /// 获取assets/images文件件下的图片
+  ///
   static String wrapAssets(String url) {
     return "assets/images/" + url;
   }

@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:flutter/material.dart' hide Banner, showSearch;
 import 'package:flutter/cupertino.dart';
@@ -35,7 +36,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with AutomaticKeepAliveClientMixin {
   @override
-  bool get wantKeepAlive => true;
+  bool get wantKeepAlive => false;
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +52,7 @@ class _HomePageState extends State<HomePage>
         tapToTopModel.init();
       },
       builder: (context, homeModel, tapToTopModel, child) {
+       print("ProviderWidget2 build");
         return Scaffold(
           body: MediaQuery.removePadding(
               context: context,
@@ -122,7 +124,7 @@ class _HomePageState extends State<HomePage>
                                   display: tapToTopModel.showTopBtn,
                                   child: Text(Platform.isIOS
                                       ? 'Fun Flutter'
-                                      : S.of(context).appName),
+                                      : S.of(context).appName+Random().nextInt(100).toString()),
                                 ),
                               ),
                             ),

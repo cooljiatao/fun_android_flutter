@@ -8,6 +8,9 @@ import 'package:fun_android/config/router_manger.dart';
 import 'package:fun_android/config/resource_mananger.dart';
 import 'package:fun_android/generated/l10n.dart';
 
+///
+/// 启动页
+///
 class SplashPage extends StatefulWidget {
   @override
   _SplashPageState createState() => _SplashPageState();
@@ -51,8 +54,9 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      ///管理双击退出页面
       body: WillPopScope(
-        onWillPop: () => Future.value(false),
+        onWillPop: () => Future.value(false),///不退出
         child: Stack(fit: StackFit.expand, children: <Widget>[
           Image.asset(
               ImageHelper.wrapAssets(
