@@ -13,7 +13,7 @@ class Http extends BaseHttp {
     options.baseUrl = 'https://www.wanandroid.com/';
     interceptors
       ..add(ApiInterceptor())
-      // cookie持久化 异步
+      /// cookie持久化 异步
       ..add(CookieManager(
           PersistCookieJar(dir: StorageManager.temporaryDirectory.path)));
   }

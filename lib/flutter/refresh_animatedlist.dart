@@ -359,6 +359,7 @@ class SliverAnimatedListState extends State<SliverAnimatedList>
     });
   }
 
+  /// 修改
   /// 全部清空无动画效果,用于下拉刷新
   ///
   refresh(int itemCount) {

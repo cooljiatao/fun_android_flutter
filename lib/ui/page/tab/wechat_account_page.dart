@@ -41,6 +41,7 @@ class _WechatAccountPageState extends State<WechatAccountPage>
   @override
   Widget build(BuildContext context) {
     super.build(context);
+    ///改变状态栏颜色
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: StatusBarUtils.systemUiOverlayStyle(context),
       child: ProviderWidget<WechatAccountCategoryModel>(
