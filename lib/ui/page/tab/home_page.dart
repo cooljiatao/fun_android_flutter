@@ -65,6 +65,8 @@ class _HomePageState extends State<HomePage>
                           error: homeModel.viewStateError,
                           onPressed: homeModel.initData));
                 }
+                print("RefreshConfigurationRefreshConfiguration");
+
                 return RefreshConfiguration.copyAncestor(
                   context: context,
                   // 下拉触发二楼距离
@@ -75,7 +77,7 @@ class _HomePageState extends State<HomePage>
                       80 + MediaQuery.of(context).padding.top / 3,
                   child: SmartRefresher(
                       controller: homeModel.refreshController,
-                      header: HomeRefreshHeader(),
+                      //header: HomeRefreshHeader(),
                       enableTwoLevel: homeModel.list.isNotEmpty,
                       onTwoLevel: () async {
                         await Navigator.of(context)

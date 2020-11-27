@@ -76,17 +76,17 @@ class ViewStateModel with ChangeNotifier {
       if (e.type == DioErrorType.CONNECT_TIMEOUT ||
           e.type == DioErrorType.SEND_TIMEOUT ||
           e.type == DioErrorType.RECEIVE_TIMEOUT) {
-        // timeout
+        /// timeout
         errorType = ViewStateErrorType.networkTimeOutError;
         message = e.error;
       } else if (e.type == DioErrorType.RESPONSE) {
-        // incorrect status, such as 404, 503...
+        /// incorrect status, such as 404, 503...
         message = e.error;
       } else if (e.type == DioErrorType.CANCEL) {
-        // to be continue...
+        /// to be continue...
         message = e.error;
       } else {
-        // dio将原error重新套了一层
+        /// dio将原error重新套了一层
         e = e.error;
         if (e is UnAuthorizedException) {
           stackTrace = null;
