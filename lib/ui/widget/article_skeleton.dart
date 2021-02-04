@@ -15,10 +15,8 @@ class ArticleSkeletonItem extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 0),
-      decoration: BoxDecoration(
-          border: Border(
-              bottom: Divider.createBorderSide(context,
-                  width: 0.7, color: Colors.redAccent))),
+      decoration:
+          BoxDecoration(border: Border(bottom: Divider.createBorderSide(context, width: 0.7, color: Colors.redAccent))),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.start,

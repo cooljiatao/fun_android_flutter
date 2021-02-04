@@ -117,7 +117,7 @@ class StructureCategoryWidget extends StatelessWidget {
 }
 
 
-/// 体系->公众号
+/// 体系->导航
 class NavigationSiteCategoryList extends StatefulWidget {
   @override
   _NavigationSiteCategoryListState createState() =>

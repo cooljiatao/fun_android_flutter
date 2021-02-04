@@ -454,7 +454,7 @@ class S {
   }
 
   /// `Hot`
-  String get searchHot {
+  String get searchHHotot {
     return Intl.message(
       'Hot',
       name: 'searchHot',

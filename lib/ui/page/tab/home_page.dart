@@ -36,7 +36,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with AutomaticKeepAliveClientMixin {
   @override
-  bool get wantKeepAlive => false;
+  bool get wantKeepAlive => true;
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage>
                       80 + MediaQuery.of(context).padding.top / 3,
                   child: SmartRefresher(
                       controller: homeModel.refreshController,
-                      //header: HomeRefreshHeader(),
+                      header: HomeRefreshHeader(),
                       enableTwoLevel: homeModel.list.isNotEmpty,
                       onTwoLevel: () async {
                         await Navigator.of(context)

@@ -43,6 +43,7 @@ class _ProjectPageState extends State<ProjectPage>
   @override
   Widget build(BuildContext context) {
     super.build(context);
+    ///Flutter修改状态栏字体颜色
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: StatusBarUtils.systemUiOverlayStyle(context),
       child: ProviderWidget<ProjectCategoryModel>(

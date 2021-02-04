@@ -8,6 +8,9 @@ import 'package:fun_android/model/search.dart';
 import 'package:fun_android/provider/view_state_list_model.dart';
 import 'package:fun_android/view_model/search_model.dart';
 
+///
+/// 查找默认主页面
+///
 class SearchSuggestions<T> extends StatelessWidget {
   final SearchDelegate<T> delegate;
 
@@ -15,9 +18,11 @@ class SearchSuggestions<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ///通过LayoutBuilder组件可以获取父组件的约束尺寸。
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         return SingleChildScrollView(
+          ///ConstrainedBox组件约束子组件的最大宽高和最小宽高
           child: ConstrainedBox(
             constraints: BoxConstraints(
               minHeight: constraints.maxHeight,
@@ -41,7 +46,9 @@ class SearchSuggestions<T> extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
+                      ///热门推荐
                       SearchHotKeysWidget(delegate: delegate),
+                      ///历史查询
                       SearchHistoriesWidget(delegate: delegate),
                     ],
                   ),
@@ -55,6 +62,9 @@ class SearchSuggestions<T> extends StatelessWidget {
   }
 }
 
+///
+/// 热门搜索推荐
+///
 class SearchHotKeysWidget extends StatefulWidget {
   final SearchDelegate delegate;
 
@@ -67,6 +77,7 @@ class SearchHotKeysWidget extends StatefulWidget {
 class _SearchHotKeysWidgetState extends State<SearchHotKeysWidget> {
   @override
   void initState() {
+    ///当前 Frame 绘制完成后进行回调，并只会回调一次
     WidgetsBinding.instance.addPostFrameCallback((callback) {
       Provider.of<SearchHotKeyModel>(context,listen: false).initData();
     });
@@ -83,6 +94,7 @@ class _SearchHotKeysWidgetState extends State<SearchHotKeysWidget> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
+              ///顶部热门标签
               FlatButton(
                 onPressed: null,
                 child: Text(
@@ -90,6 +102,7 @@ class _SearchHotKeysWidgetState extends State<SearchHotKeysWidget> {
                   style: Provider.of<TextStyle>(context),
                 ),
               ),
+              ///刷新按钮
               Consumer<SearchHotKeyModel>(
                 builder: (context, model, _) {
                   return Visibility(
@@ -114,6 +127,7 @@ class _SearchHotKeysWidgetState extends State<SearchHotKeysWidget> {
             ],
           ),
         ),
+        ///热门列表
         SearchSuggestionStateWidget<SearchHotKeyModel, SearchHotKey>(
           builder: (context, item) => ActionChip(
             label: Text(item.name),
